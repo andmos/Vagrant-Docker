@@ -1,0 +1,30 @@
+#! /bin/bash
+
+function install() {
+sudo apt-get install -y $1 >/dev/null 2>&1 
+    }
+
+programs="build-essential vim ssh curl htop git make traceroute screen python-dev" 
+
+echo "Installing essentials..."
+
+sudo apt-get update >/dev/null 2>&1 
+
+for program in $programs
+do 
+    echo "Current package: $program" 
+    install $program 
+done 
+
+echo "Installing docker..."
+
+curl -s https://get.docker.io/ubuntu/ | sudo sh > /dev/null 2>&1
+
+cp /vagrant/.bash_aliases /home/vagrant
+cp /vagrant/.vimrc /home/vagrant 
+
+git clone https://github.com/ekalinin/Dockerfile.vim.git
+cd Dockerfile.vim
+make install
+
+echo "All done! go 'vagrant ssh'" 
