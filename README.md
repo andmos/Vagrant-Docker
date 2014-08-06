@@ -1,7 +1,7 @@
 Vagrant
 =======
 
-My Vagrant template for a virtual machine with latest Docker installation.
+My Vagrant template for a virtual machine with the latest Docker installation.
  
     sudo apt-get install -y virtualbox vagrant
     git clone 
