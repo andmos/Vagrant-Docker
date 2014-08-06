@@ -26,14 +26,9 @@ cp /vagrant/.vimrc /home/vagrant
 git clone https://github.com/ekalinin/Dockerfile.vim.git
 cd Dockerfile.vim
 make install
-..
+cd ..
 
-
-
-git clone https://github.com/jpetazzo/nsenter.git
-cd nsenter
-sudo docker build -t jpetazzo/nsenter .
-docker run --rm -v /usr/local/bin:/target jpetazzo/nsenter 
-
+echo "Installing docker-enter..."
+sudo docker run --rm -v /usr/local/bin:/target jpetazzo/nsenter > /dev/null 2>&1
 
 echo "All done! go 'vagrant ssh'" 
