@@ -4,7 +4,7 @@ function install() {
 sudo apt-get install -y $1 >/dev/null 2>&1 
     }
 
-programs="build-essential vim ssh curl htop git make traceroute screen python-dev" 
+programs="build-essential vim ssh curl htop git make traceroute screen python-dev ccze" 
 
 echo "Installing essentials..."
 
