@@ -21,7 +21,6 @@ echo "Installing docker..."
 curl -s https://get.docker.io/ubuntu/ | sudo sh > /dev/null 2>&1
 
 cp /vagrant/.bash_aliases /home/vagrant
-cp /vagrant/.vimrc /home/vagrant 
 
 git clone https://github.com/ekalinin/Dockerfile.vim.git
 cd Dockerfile.vim
