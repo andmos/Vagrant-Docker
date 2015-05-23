@@ -2,16 +2,17 @@
 # vi: set ft=ruby :
 
 Vagrant::Config.run do |config|
-  config.vm.box = "virtualUbuntu64"
+  config.vm.box = "ubuntu/trusty64"
 
-  config.vm.box_url = "http://files.vagrantup.com/precise64.box"
-  config.vm.provision :shell, :path => "BootStrap"
-
-  config.vm.forward_port 8081, 8081 
+  config.vm.box_url = "ubuntu/trusty64"
+  config.vm.provision :shell, :inline => "sudo apt-get update"
+    
+  config.vm.provision :shell, :inline => "curl -s https://get.docker.io/ubuntu/ | sudo sh"
+  config.vm.provision :shell, :inline => "curl -L https://github.com/docker/compose/releases/download/1.2.0/docker-compose-`uname -s`-`uname -m` > docker-compose; chmod +x docker-compose; sudo mv docker-compose /usr/local/bin/docker-compose"
+   
+  config.vm.forward_port 8080, 8080 
   config.vm.forward_port 5000, 5000
-  config.vm.forward_port 5432, 5432
-  config.vm.forward_port 7777, 7777
-  config.vm.forward_port 7778 ,7778 
+  config.vm.forward_port 9000, 9000 
  
 end
 
