@@ -1,4 +1,4 @@
 Vagrant
 =======
 
-My Vagrant template for a virtual machine with the latest Docker and Docker-Composeinstallation.
+My Vagrant template for a virtual machine with the latest Docker and Docker-Compose installation.
